@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: allegratta;
+    src: url(./assets/fonts/Allegratta.ttf);
+}
+@font-face {
+    font-family: alsscrp;
+    src: url(./assets/fonts/alsscrp.ttf);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    background-color:#FFF7EE;
+}

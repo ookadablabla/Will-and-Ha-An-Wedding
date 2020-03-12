@@ -1,0 +1,72 @@
+.photobanner {
+    height: 200px;
+    width: 3000px;
+}
+
+.bannerWrapper {
+    width: 100%;
+    overflow: hidden;
+    background: white;
+}
+
+.photobanner img {
+    height:100%;
+}
+
+   /*keyframe animations*/
+.first {
+-webkit-animation: bannermove 60s linear infinite;
+    -moz-animation: bannermove 60s linear infinite;
+    -ms-animation: bannermove 60s linear infinite;
+        -o-animation: bannermove 60s linear infinite;
+        animation: bannermove 60s linear infinite;
+}
+    
+@keyframes bannermove {
+    0% {
+       margin-left: 0px;
+    }
+    100% {
+       margin-left: -2125px;
+    }
+    
+   }
+    
+   @-moz-keyframes bannermove {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -2125px;
+    }
+    
+   }
+    
+   @-webkit-keyframes bannermove {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -2125px;
+    }
+    
+   }
+    
+   @-ms-keyframes bannermove {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -2125px;
+    }
+    
+   }
+    
+@-o-keyframes bannermove {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+}
