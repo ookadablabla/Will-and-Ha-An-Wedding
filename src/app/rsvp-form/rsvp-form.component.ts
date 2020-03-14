@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-rsvp-form',
@@ -44,10 +45,11 @@ export class RsvpFormComponent implements OnInit {
       url: 'https://script.google.com/macros/s/AKfycby-4VIE9kGWDRWTIbLhKmfbeCPEFjO37fp4aTob3OI6MirVc3ct/exec',
       method: "GET",
       dataType: "json",
-      data: data
-    }).success(
-      // do something
-    );
+      data: data,
+      success: function() {
+        console.log("Success!");
+      }
+    });
   }
 
 }

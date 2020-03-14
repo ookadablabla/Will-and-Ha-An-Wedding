@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Commands
+
+* Build the server locally: `ng build --prod --base-href="/will-and-ha-an-wedding/"`
+* Run the server locally: `ng serve --open`
+* Run the server remote: `nohup npm start --production &`
