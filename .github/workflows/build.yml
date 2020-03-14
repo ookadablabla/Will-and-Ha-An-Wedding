@@ -36,4 +36,4 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: angular-dist
-          path: dist\will-and-ha-an-wedding
+          path: /dist/will-and-ha-an-wedding
