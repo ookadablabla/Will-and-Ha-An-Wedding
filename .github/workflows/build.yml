@@ -34,7 +34,6 @@ jobs:
           
       - name: Create Artifact
         uses: actions/upload-artifact@v1
-          if: failure()
-          with:
-            name: angular-dist
-            path: dist\will-and-ha-an-wedding
+        with:
+          name: angular-dist
+          path: dist\will-and-ha-an-wedding
