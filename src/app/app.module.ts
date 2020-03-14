@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RsvpFormComponent } from './rsvp-form/rsvp-form.component';
 import { PhotoBannerComponent } from './photo-banner/photo-banner.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent }
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

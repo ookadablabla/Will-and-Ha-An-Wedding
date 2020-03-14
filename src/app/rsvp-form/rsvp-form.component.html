@@ -10,15 +10,32 @@
             <div class="form-group">
                 <label>Full Name</label>
                 <input id="full-name" name="full-name" type="text" placeholder="full name" class="form-control"
-                    required>
+                [(ngModel)]='fullname' required>
                 <sub></sub>
             </div>
+
+            <!-- email input-->
+            <div class="form-group">
+                <label>Email Address</label>
+                <input id="email" name="email" type="email" placeholder="email address" class="form-control" 
+                [(ngModel)]='email'>
+                <sub></sub>
+            </div>
+
+            <!-- phone input-->
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input id="phone" name="phone" type="text" placeholder="phone number" class="form-control"
+                [(ngModel)]='phone' >
+                <sub></sub>
+            </div>
+
             <!-- address-line1 input-->
             <div class="form-group">
                 <label>Address Line 1</label>
                 <div class="controls">
                     <input id="address-line1" name="address-line1" type="text" placeholder="address line 1"
-                        class="form-control" required>
+                        class="form-control" [(ngModel)]='address1' required>
                     <sub>Street address, P.O. box, company name, c/o</sub>
                 </div>
             </div>
@@ -26,33 +43,34 @@
             <div class="form-group">
                 <label>Address Line 2</label>
                 <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
-                    class="form-control">
+                [(ngModel)]='address2' class="form-control">
                 <sub>Apartment, suite , unit, building, floor, etc.</sub>
             </div>
             <!-- city input-->
             <div class="form-group">
                 <label>City / Town</label>
-                <input id="city" name="city" type="text" placeholder="city" class="form-control" required>
+                <input id="city" name="city" type="text" placeholder="city" class="form-control" 
+                [(ngModel)]='town' required>
                 <sub></sub>
             </div>
             <!-- region input-->
             <div class="form-group">
                 <label>State / Province / Region</label>
                 <input id="region" name="region" type="text" placeholder="state / province / region"
-                    class="form-control" required>
+                [(ngModel)]='state' class="form-control" required>
                 <sub></sub>
             </div>
             <!-- postal-code input-->
             <div class="form-group">
                 <label>Zip / Postal Code</label>
                 <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
-                    class="form-control" required>
+                [(ngModel)]='zip' class="form-control" required>
                 <sub></sub>
             </div>
             <!-- country select -->
             <div class="form-group">
                 <label>Country</label>
-                <select id="country" name="country" class="form-control" required>
+                <select id="country" name="country" class="form-control" [(ngModel)]='country' required>
                     <option value="" selected="selected">(please select a country)</option>
                     <option value="AF">Afghanistan</option>
                     <option value="AL">Albania</option>
@@ -296,7 +314,7 @@
                 </select>
             </div>
             <div>
-                <button type="submit" class="btn btn-secondary float-right">Submit</button>
+                <button type="submit" class="btn btn-secondary float-right" (click)="submitAddress($event)">Submit</button>
             </div>
         </form>
     </div>
