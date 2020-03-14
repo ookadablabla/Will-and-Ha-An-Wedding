@@ -7,7 +7,7 @@ import * as $ from "jquery";
   styleUrls: ['./rsvp-form.component.css']
 })
 export class RsvpFormComponent implements OnInit {
-
+  
   fullname :string;
   email :string;
   phone :string;
