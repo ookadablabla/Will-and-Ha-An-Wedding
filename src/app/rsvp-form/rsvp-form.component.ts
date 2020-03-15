@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-rsvp-form',
@@ -19,12 +20,33 @@ export class RsvpFormComponent implements OnInit {
   zip :string;
   country :string;
 
-  constructor() { }
+  constructor(
+    private alerter: AlertService
+  ) { }
 
   ngOnInit() {
+    let that = this;
+    this.clearForm();
+    $("#submitAnother").click(function() {
+      that.clearForm();
+      $("#thankYouMessage").slideUp(400, function() {
+        $("#formHolder").slideDown();
+      });
+    })
   }
 
-  //
+  clearForm() {
+    this.fullname = '';
+    this.email = '';
+    this.phone = '';
+    this.address1 = '';
+    this.address2 = '';
+    this.city = '';
+    this.state = '';
+    this.town = '';
+    this.zip = '';
+    this.country = '';
+  }
 
   submitAddress(event) {
     let data = {
@@ -39,15 +61,31 @@ export class RsvpFormComponent implements OnInit {
       zip: this.zip,
       country: this.country
     };
-    console.log(data);
 
-    var jqxhr = $.ajax({
+    var that = this;
+    var submit = $("#submitText");
+    var submitLoading = $("#submitLoading");
+
+    submitLoading.show();
+    submit.hide();
+
+    $.ajax({
       url: 'https://script.google.com/macros/s/AKfycby-4VIE9kGWDRWTIbLhKmfbeCPEFjO37fp4aTob3OI6MirVc3ct/exec',
       method: "GET",
       dataType: "json",
       data: data,
       success: function() {
-        console.log("Success!");
+        that.alerter.success("Your address has been successfully submitted!");
+        $("#formHolder").slideUp(1000, function() {
+          $("#thankYouMessage").slideDown();
+        });
+      },
+      error: function() {
+        that.alerter.error("Something went wrong submitting your address, please try again later.")
+      },
+      complete: function() {
+        submitLoading.hide();
+        submit.show();
       }
     });
   }

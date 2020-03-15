@@ -12,10 +12,20 @@ html, body {
     padding: 0;
     margin: 0;
 }
+
 html {
     height: 100%;
 }
+
 body {
     min-height: 100%;
     background-color:#FFF7EE;
+}
+
+#alertArea {
+    position: fixed;
+    top: 15%;
+    width: 50%;
+    left: 25%;
+    z-index: 9999;
 }

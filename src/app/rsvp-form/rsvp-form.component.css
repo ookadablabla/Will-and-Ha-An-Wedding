@@ -23,3 +23,22 @@ label {
 button {
     font-size: 1em;
 }
+
+#rsvpSubmit {
+    display:inline-block;
+    max-height:50px;
+    text-align: center;
+    position: relative;
+}
+
+#thankYouMessage {
+    display: none;
+}
+
+#submitLoading {
+    display: none;
+    background: url(/assets/images/Spinner-1s-200px.svg);
+    color: rgba(0, 0, 0, 0);  
+    background-repeat: no-repeat;
+    background-position: center;
+}
