@@ -8,6 +8,11 @@ p {
     font-size: 1.5em;
 }
 
+.required-input::after {
+    content: "*";
+    color:red;
+}
+
 label {
     font-family: allegratta;
     font-family: alsscrp;

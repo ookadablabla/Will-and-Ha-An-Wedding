@@ -8,31 +8,18 @@
     <div class="col-sm-12" id="formHolder">
         <form class="form-horizontal" #myForm="ngForm">
             <p>We would love your contact info so we can send you our wedding invites!</p>
+            <sub><span class="required-input"></span> indicates a required field</sub>
 
             <div class="form-group">
-                <label>Full Name</label>
+                <label for="full-name" class="required-input">Full Name</label>
                 <input id="full-name" name="full-name" type="text" placeholder="full name" class="form-control"
                 [(ngModel)]='fullname' required>
                 <sub></sub>
             </div>
 
             <div class="form-group">
-                <label>Email Address</label>
-                <input id="email" name="email" type="email" placeholder="email address" class="form-control" 
-                [(ngModel)]='email'>
-                <sub></sub>
-            </div>
-
-            <div class="form-group">
-                <label>Phone Number</label>
-                <input id="phone" name="phone" type="text" placeholder="phone number" class="form-control"
-                [(ngModel)]='phone' >
-                <sub></sub>
-            </div>
-
-            <div class="form-group">
-                <label>Address Line 1</label>
-                <div class="controls">
+                <label for="full-name" class="required-input">Address Line 1</label>
+                <div class="address-line1">
                     <input id="address-line1" name="address-line1" type="text" placeholder="address line 1"
                         class="form-control" [(ngModel)]='address1' required>
                     <sub>Street address, P.O. box, company name, c/o</sub>
@@ -40,37 +27,51 @@
             </div>
 
             <div class="form-group">
-                <label>Address Line 2</label>
+                <label for="address-line2">Address Line 2</label>
                 <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
                 [(ngModel)]='address2' class="form-control">
                 <sub>Apartment, suite , unit, building, floor, etc.</sub>
             </div>
 
             <div class="form-group">
-                <label>City / Town</label>
+                <label for="city" class="required-input">City / Town</label>
                 <input id="city" name="city" type="text" placeholder="city" class="form-control" 
                 [(ngModel)]='town' required>
                 <sub></sub>
             </div>
 
             <div class="form-group">
-                <label>State / Province / Region</label>
+                <label for="region" class="required-input">State / Province / Region</label>
                 <input id="region" name="region" type="text" placeholder="state / province / region"
                 [(ngModel)]='state' class="form-control" required>
                 <sub></sub>
             </div>
             
             <div class="form-group">
-                <label>Zip / Postal Code</label>
+                <label for="postal-code" class="required-input">Zip / Postal Code</label>
                 <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
                 [(ngModel)]='zip' class="form-control" required>
                 <sub></sub>
             </div>
             
             <div class="form-group">
-                <label>Country</label>
+                <label for="country" class="required-input">Country</label>
                 <input id="country" name="country" type="text" placeholder="country"
                 [(ngModel)]='country' class="form-control" required>
+                <sub></sub>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="email address" class="form-control" 
+                [(ngModel)]='email'>
+                <sub></sub>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="text" placeholder="phone number" class="form-control"
+                [(ngModel)]='phone' >
                 <sub></sub>
             </div>
 

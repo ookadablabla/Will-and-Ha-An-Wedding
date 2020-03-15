@@ -41,7 +41,6 @@ export class RsvpFormComponent implements OnInit {
     this.phone = '';
     this.address1 = '';
     this.address2 = '';
-    this.city = '';
     this.state = '';
     this.town = '';
     this.zip = '';
@@ -50,12 +49,12 @@ export class RsvpFormComponent implements OnInit {
 
   submitAddress(event) {
     let data = {
+      time: new Date(),
       full_name: this.fullname,
       email_address: this.email,
       phone_number: this.phone,
       address_1: this.address1,
       address_2: this.address2,
-      city: this.city,
       state: this.state,
       town: this.town,
       zip: this.zip,
