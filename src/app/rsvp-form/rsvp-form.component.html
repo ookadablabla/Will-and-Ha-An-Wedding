@@ -1,85 +1,160 @@
 <div class="row">
-    <h1>Address Collection</h1>
+    <h1>
+        <span class="en">Address Collection</span>
+        <span class="vi">Bộ sưu tập địa chỉ</span>
+    </h1>
     <div class="col-sm-12" id="thankYouMessage">
-        <p>Thank you for submitting your address, we will reach out shortly with more details!</p>
+        <p>
+            <span class="en">Thank you for submitting your address, we will reach out shortly with more details!</span>
+            <span class="vi">Cảm ơn bạn đã gửi địa chỉ của bạn, chúng tôi sẽ liên hệ ngay với nhiều chi tiết hơn!</span>
+        </p>
 
-        <button class="btn btn-secondary" id="submitAnother">Submit another</button>
+        <button class="btn btn-secondary" id="submitAnother">
+            <span class="en">Submit another</span>
+            <span class="vi">Gửi người khác</span>
+        </button>
     </div>
     <div class="col-sm-12" id="formHolder">
         <form class="form-horizontal" #myForm="ngForm">
-            <p>We would love your contact info so we can send you our wedding invites!</p>
-            <sub><span class="required-input"></span> indicates a required field</sub>
+            <p>
+                <span class="en">We would love your contact info so we can send you our wedding invites!</span>
+                <span class="vi">Chúng tôi rất thích thông tin liên lạc của bạn để chúng tôi có thể gửi cho bạn lời mời đám cưới của chúng tôi!</span>
+            </p>
+            <sub><span class="required-input"></span> 
+                <span class="en">indicates a required field</span>
+                <span class="vi">chỉ ra một trường bắt buộc</span>
+            </sub>
 
             <div class="form-group">
-                <label for="full-name" class="required-input">Full Name</label>
-                <input id="full-name" name="full-name" type="text" placeholder="full name" class="form-control"
+                <label for="full-name" class="required-input">
+                    <span class="en">Full Name</span>
+                    <span class="vi">Họ và tên</span>
+                </label>
+                <input id="full-name" name="full-name" type="text" class="form-control"
                 [(ngModel)]='fullname' required>
-                <sub></sub>
+                <sub>
+                    <span class="en">Example: John Doe</span>
+                    <span class="vi">Ví dụ: John Doe</span>
+                </sub>
             </div>
 
             <div class="form-group">
-                <label for="full-name" class="required-input">Address Line 1</label>
+                <label for="full-name" class="required-input">
+                    <span class="en">Address Line 1</span>
+                    <span class="vi">Địa chỉ 1</span>
+                </label>
                 <div class="address-line1">
-                    <input id="address-line1" name="address-line1" type="text" placeholder="address line 1"
+                    <input id="address-line1" name="address-line1" type="text"
                         class="form-control" [(ngModel)]='address1' required>
-                    <sub>Street address, P.O. box, company name, c/o</sub>
+                    <sub>
+                        <span class="en">Street address, P.O. box, company name, c/o</span>
+                        <span class="vi">Địa chỉ đường phố, P.O. hộp, tên công ty, c / o</span>
+                    </sub>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="address-line2">Address Line 2</label>
-                <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
+                <label for="address-line2">
+                    <span class="en">Address Line 2</span>
+                    <span class="vi">Địa chỉ 2</span>
+                </label>
+                <input id="address-line2" name="address-line2" type="text"
                 [(ngModel)]='address2' class="form-control">
-                <sub>Apartment, suite , unit, building, floor, etc.</sub>
+                <sub>
+                    <span class="en">Apartment, suite , unit, building, floor, etc.</span>
+                    <span class="vi">Căn hộ, bộ, đơn vị, tòa nhà, sàn, vv</span>
+                </sub>
             </div>
 
             <div class="form-group">
-                <label for="city" class="required-input">City / Town</label>
-                <input id="city" name="city" type="text" placeholder="city" class="form-control" 
+                <label for="city" class="required-input">
+                    <span class="en">City / Town</span>
+                    <span class="vi">Thành phố / thị trấn</span>
+                </label>
+                <input id="city" name="city" type="text" class="form-control" 
                 [(ngModel)]='town' required>
-                <sub></sub>
+                <sub>
+                    <span class="en">Example: Columbus</span>
+                    <span class="vi">Ví dụ: Columbus</span>
+                </sub>
             </div>
 
             <div class="form-group">
-                <label for="region" class="required-input">State / Province / Region</label>
-                <input id="region" name="region" type="text" placeholder="state / province / region"
+                <label for="region" class="required-input">
+                    <span class="en">State / Province / Region</span>
+                    <span class="vi">Bang / Tỉnh / Vùng</span>
+                </label>
+                <input id="region" name="region" type="text"
                 [(ngModel)]='state' class="form-control" required>
-                <sub></sub>
+                <sub>
+                    <span class="en">Example: Ohio</span>
+                    <span class="vi">Ví dụ: Ohio</span>
+                </sub>
             </div>
             
             <div class="form-group">
-                <label for="postal-code" class="required-input">Zip / Postal Code</label>
-                <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+                <label for="postal-code" class="required-input">
+                    <span class="en">Zip / Postal Code</span>
+                    <span class="vi">Mã bưu chính / mã bưu điện</span>
+                </label>
+                <input id="postal-code" name="postal-code" type="text"
                 [(ngModel)]='zip' class="form-control" required>
-                <sub></sub>
+                <sub>
+                    <span class="en">Example: 43215</span>
+                    <span class="vi">Ví dụ: 43215</span>
+                </sub>
             </div>
             
             <div class="form-group">
-                <label for="country" class="required-input">Country</label>
-                <input id="country" name="country" type="text" placeholder="country"
+                <label for="country" class="required-input">
+                    <span class="en">Country</span>
+                    <span class="vi">Quốc gia</span>
+                </label>
+                <input id="country" name="country" type="text"
                 [(ngModel)]='country' class="form-control" required>
-                <sub></sub>
+                <sub>
+                    <span class="en">Example: United States</span>
+                    <span class="vi">Ví dụ: Hoa Kỳ</span>
+                </sub>
             </div>
 
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input id="email" name="email" type="email" placeholder="email address" class="form-control" 
+                <label for="email">
+                    <span class="en">Email Address</span>
+                    <span class="vi">Địa chỉ email</span>
+                </label>
+                <input id="email" name="email" type="email" class="form-control" 
                 [(ngModel)]='email'>
-                <sub></sub>
+                <sub>
+                    <span class="en">Example: john.doe@gmail.com</span>
+                    <span class="vi">Ví dụ: john.doe@gmail.com</span>
+                </sub>
             </div>
 
             <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="text" placeholder="phone number" class="form-control"
+                <label for="phone">
+                    <span class="en">Phone Number</span>
+                    <span class="vi">Số điện thoại</span>
+                </label>
+                <input id="phone" name="phone" type="text" class="form-control"
                 [(ngModel)]='phone' >
-                <sub></sub>
+                <sub>
+                    <span class="en">Example: +1 (555) 555-5555</span>
+                    <span class="vi">Ví dụ: +1 (555) 555-5555</span>
+                </sub>
             </div>
 
             <div>
                 <button id="rsvpSubmit" type="submit" class="btn btn-secondary float-right" [disabled]="!myForm.form.valid" (click)="submitAddress($event)">
                     
-                    <span id="submitText">Submit</span>
-                    <div id="submitLoading">Submit</div>
+                    <span id="submitText">
+                        <span class="en">Submit</span>
+                        <span class="vi">Gửi đi</span>
+                    </span>
+                    <div id="submitLoading">
+                        <span class="en">Submit</span>
+                        <span class="vi">Gửi đi</span>
+                    </div>
                 </button>
             </div>
         </form>

@@ -1,0 +1,12 @@
+.language-selection div {
+    margin:0px 5px;
+    width: 30px;
+    height: calc(30px / (4/3));
+    overflow: visible;
+    cursor: pointer;
+}
+
+.language-selection {
+    margin: 0px;
+    height: 100%;
+}

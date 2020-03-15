@@ -1,7 +1,11 @@
 h1 {
+    font-size: 4em;
+    margin-left: 15px;
+}
+
+h1 .en {
     font-family: allegratta;
     font-family: alsscrp;
-    font-size: 4em;
 }
 
 p {
@@ -13,10 +17,13 @@ p {
     color:red;
 }
 
-label {
+label .en {
     font-family: allegratta;
     font-family: alsscrp;
     font-weight: 500;
+}
+
+label {
     margin-bottom: -4px;
     font-size:1.5em;
 }

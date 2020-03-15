@@ -25,10 +25,10 @@ export class AlertService {
   }
 
   success(message: string, timeout = this.defaultTimeout) {
-      this.addAlert("success", "Success! ", message, timeout);
+      this.addAlert("success", "<span class='en'>Success!</span><span class='vi'>Sự thành công!</span> ", message, timeout);
   }
 
   error(message: string, timeout = this.defaultTimeout) {
-      this.addAlert("danger", "Error! ", message, timeout);
+      this.addAlert("danger", "<span class='en'>Error!</span><span class='vi'>Lỗi!</span> ", message, timeout);
   }
 }

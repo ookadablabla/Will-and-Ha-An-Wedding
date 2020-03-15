@@ -1,16 +1,21 @@
 <!-- A grey horizontal navbar that becomes vertical on small screens -->
 <nav class="navbar navbar-dark sticky-top navbar-expand-sm bg-dark">
-  <a class="navbar-brand" href="/">Ha An & Will's Wedding</a>
+  <a class="navbar-brand" href="/"><span class="en">Ha An & Will's Wedding</span><span class="vi">Đám cưới của Hà An & Will</span></a>
   <!-- Links -->
-  <ul class="navbar-nav">
+  <ul class="navbar-nav mr-auto">
     <li class="nav-item active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="#"><span class="en">Home</span><span class="vi">Trang Chủ</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Registry</a>
+      <a class="nav-link" href="#"><span class="en">Registry</span><span class="vi">Đăng ký</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Photo Album</a>
+      <a class="nav-link" href="#"><span class="en">Photo Album</span><span class="vi">Album ảnh</span></a>
     </li>
+  </ul>
+  <ul class="language-selection">
+      <!-- https://www.c-sharpcorner.com/article/steps-to-add-country-flags-in-angular-7-application/ -->
+    <div class="flag-icon flag-icon-us" (click)="swapLanguage('us')"></div>
+    <div class="flag-icon flag-icon-vn" (click)="swapLanguage('vi')"></div>
   </ul>
 </nav>

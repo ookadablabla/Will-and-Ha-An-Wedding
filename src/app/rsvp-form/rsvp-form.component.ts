@@ -74,13 +74,19 @@ export class RsvpFormComponent implements OnInit {
       dataType: "json",
       data: data,
       success: function() {
-        that.alerter.success("Your address has been successfully submitted!");
+        let en = "Your address has been successfully submitted!";
+        let vi = "Địa chỉ của bạn đã được gửi thành công!";
+        let message = "<span class='en'>"+en+"</span><span class='vi'>"+vi+"</span>"
+        that.alerter.success(message);
         $("#formHolder").slideUp(1000, function() {
           $("#thankYouMessage").slideDown();
         });
       },
       error: function() {
-        that.alerter.error("Something went wrong submitting your address, please try again later.")
+        let en = "Something went wrong submitting your address, please try again later.";
+        let vi = "Đã xảy ra lỗi khi gửi địa chỉ của bạn, vui lòng thử lại sau.";
+        let message = "<span class='en'>"+en+"</span><span class='vi'>"+vi+"</span>"
+        that.alerter.error(message)
       },
       complete: function() {
         submitLoading.hide();
