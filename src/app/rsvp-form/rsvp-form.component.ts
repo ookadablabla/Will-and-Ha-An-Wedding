@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
 import { AlertService } from '../services/alert.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-rsvp-form',
@@ -8,58 +9,52 @@ import { AlertService } from '../services/alert.service';
   styleUrls: ['./rsvp-form.component.css']
 })
 export class RsvpFormComponent implements OnInit {
-  
-  fullname :string;
-  email :string;
-  phone :string;
-  address1 :string;
-  address2 :string;
-  city :string;
-  state :string;
-  town :string;
-  zip :string;
-  country :string;
+
+  addressForm: FormGroup;
+  submitted = false;
 
   constructor(
-    private alerter: AlertService
+    private alerter: AlertService,
+    private formBuilder: FormBuilder
   ) { }
 
-  ngOnInit() {
+  ngOnInit() { 
     let that = this;
-    this.clearForm();
     $("#submitAnother").click(function() {
-      that.clearForm();
+      that.addressForm.reset();
+      that.submitted = false;
       $("#thankYouMessage").slideUp(400, function() {
         $("#formHolder").slideDown();
       });
-    })
+    });
+
+    this.addressForm = this.formBuilder.group({
+      fullname: ['', Validators.required],
+      email: ['', Validators.email],
+      phone: [''],
+      address1: ['', [Validators.required]],
+      address2: [''],
+      state: ['', Validators.required],
+      town: ['', Validators.required],
+      zip: ['', Validators.required],
+      country: ['', Validators.required]
+    });
   }
 
-  clearForm() {
-    this.fullname = '';
-    this.email = '';
-    this.phone = '';
-    this.address1 = '';
-    this.address2 = '';
-    this.state = '';
-    this.town = '';
-    this.zip = '';
-    this.country = '';
-  }
+  get f() { return this.addressForm.controls; }
 
-  submitAddress(event) {
+  submitAddress() {
+    console.log(this.addressForm.value);
+    this.submitted = true;
+    if (this.addressForm.invalid) {
+        return;
+    }
+    
     let data = {
       time: new Date(),
-      full_name: this.fullname,
-      email_address: this.email,
-      phone_number: this.phone,
-      address_1: this.address1,
-      address_2: this.address2,
-      state: this.state,
-      town: this.town,
-      zip: this.zip,
-      country: this.country
+      ...this.addressForm.value
     };
+    console.log(data);
 
     var that = this;
     var submit = $("#submitText");

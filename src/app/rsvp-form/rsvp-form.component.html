@@ -15,7 +15,7 @@
         </button>
     </div>
     <div class="col-sm-12" id="formHolder">
-        <form class="form-horizontal" #myForm="ngForm">
+        <form class="form-horizontal" id="addressForm" [formGroup]="addressForm" (ngSubmit)="submitAddress()">
             <p>
                 <span class="en">We would love your contact info so we can send you our wedding invites!</span>
                 <span class="vi">Chúng tôi rất thích thông tin liên lạc của bạn để chúng tôi có thể gửi cho bạn lời mời đám cưới của chúng tôi!</span>
@@ -30,12 +30,14 @@
                     <span class="en">Full Name</span>
                     <span class="vi">Họ và tên</span>
                 </label>
-                <input id="full-name" name="full-name" type="text" class="form-control"
-                [(ngModel)]='fullname' required>
+                <input id="full-name" name="full-name" type="text" class="form-control" formControlName='fullname' [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }">
                 <sub>
                     <span class="en">Example: John Doe</span>
                     <span class="vi">Ví dụ: John Doe</span>
                 </sub>
+                <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
+                    <div *ngIf="f.fullname.errors.required">Full Name is required</div>
+                </div>
             </div>
 
             <div class="form-group">
@@ -44,12 +46,14 @@
                     <span class="vi">Địa chỉ 1</span>
                 </label>
                 <div class="address-line1">
-                    <input id="address-line1" name="address-line1" type="text"
-                        class="form-control" [(ngModel)]='address1' required>
+                    <input id="address-line1" name="address-line1" type="text" class="form-control" formControlName='address1' [ngClass]="{ 'is-invalid': submitted && f.address1.errors }">
                     <sub>
                         <span class="en">Street address, P.O. box, company name, c/o</span>
                         <span class="vi">Địa chỉ đường phố, P.O. hộp, tên công ty, c / o</span>
                     </sub>
+                    <div *ngIf="submitted && f.address1.errors" class="invalid-feedback">
+                        <div *ngIf="f.address1.errors.required">Address Line 1 is required</div>
+                    </div>
                 </div>
             </div>
 
@@ -58,8 +62,7 @@
                     <span class="en">Address Line 2</span>
                     <span class="vi">Địa chỉ 2</span>
                 </label>
-                <input id="address-line2" name="address-line2" type="text"
-                [(ngModel)]='address2' class="form-control">
+                <input id="address-line2" name="address-line2" type="text" formControlName='address2' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address2.errors }">
                 <sub>
                     <span class="en">Apartment, suite , unit, building, floor, etc.</span>
                     <span class="vi">Căn hộ, bộ, đơn vị, tòa nhà, sàn, vv</span>
@@ -71,12 +74,14 @@
                     <span class="en">City / Town</span>
                     <span class="vi">Thành phố / thị trấn</span>
                 </label>
-                <input id="city" name="city" type="text" class="form-control" 
-                [(ngModel)]='town' required>
+                <input id="city" name="city" type="text" class="form-control" formControlName='town' [ngClass]="{ 'is-invalid': submitted && f.town.errors }">
                 <sub>
                     <span class="en">Example: Columbus</span>
                     <span class="vi">Ví dụ: Columbus</span>
                 </sub>
+                <div *ngIf="submitted && f.town.errors" class="invalid-feedback">
+                    <div *ngIf="f.town.errors.required">City / Town is required</div>
+                </div>
             </div>
 
             <div class="form-group">
@@ -84,12 +89,14 @@
                     <span class="en">State / Province / Region</span>
                     <span class="vi">Bang / Tỉnh / Vùng</span>
                 </label>
-                <input id="region" name="region" type="text"
-                [(ngModel)]='state' class="form-control" required>
+                <input id="region" name="region" type="text" formControlName='state' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
                 <sub>
                     <span class="en">Example: Ohio</span>
                     <span class="vi">Ví dụ: Ohio</span>
                 </sub>
+                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                    <div *ngIf="f.state.errors.required">State / Province / Region is required</div>
+                </div>
             </div>
             
             <div class="form-group">
@@ -97,12 +104,14 @@
                     <span class="en">Zip / Postal Code</span>
                     <span class="vi">Mã bưu chính / mã bưu điện</span>
                 </label>
-                <input id="postal-code" name="postal-code" type="text"
-                [(ngModel)]='zip' class="form-control" required>
+                <input id="postal-code" name="postal-code" type="text" formControlName='zip' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zip.errors }">
                 <sub>
                     <span class="en">Example: 43215</span>
                     <span class="vi">Ví dụ: 43215</span>
                 </sub>
+                <div *ngIf="submitted && f.zip.errors" class="invalid-feedback">
+                    <div *ngIf="f.zip.errors.required">Zip / Postal Code is required</div>
+                </div>
             </div>
             
             <div class="form-group">
@@ -110,12 +119,14 @@
                     <span class="en">Country</span>
                     <span class="vi">Quốc gia</span>
                 </label>
-                <input id="country" name="country" type="text"
-                [(ngModel)]='country' class="form-control" required>
+                <input id="country" name="country" type="text" formControlName='country' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
                 <sub>
                     <span class="en">Example: United States</span>
                     <span class="vi">Ví dụ: Hoa Kỳ</span>
                 </sub>
+                <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                    <div *ngIf="f.country.errors.required">Country is required</div>
+                </div>
             </div>
 
             <div class="form-group">
@@ -123,12 +134,14 @@
                     <span class="en">Email Address</span>
                     <span class="vi">Địa chỉ email</span>
                 </label>
-                <input id="email" name="email" type="email" class="form-control" 
-                [(ngModel)]='email'>
+                <input id="email" name="email" type="email" class="form-control" formControlName='email' [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
                 <sub>
                     <span class="en">Example: john.doe@gmail.com</span>
                     <span class="vi">Ví dụ: john.doe@gmail.com</span>
                 </sub>
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.email">Please provide a valid email address</div>
+                </div>
             </div>
 
             <div class="form-group">
@@ -136,8 +149,7 @@
                     <span class="en">Phone Number</span>
                     <span class="vi">Số điện thoại</span>
                 </label>
-                <input id="phone" name="phone" type="text" class="form-control"
-                [(ngModel)]='phone' >
+                <input id="phone" name="phone" type="text" class="form-control" formControlName='phone' [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
                 <sub>
                     <span class="en">Example: +1 (555) 555-5555</span>
                     <span class="vi">Ví dụ: +1 (555) 555-5555</span>
@@ -145,7 +157,7 @@
             </div>
 
             <div>
-                <button id="rsvpSubmit" type="submit" class="btn btn-secondary float-right" [disabled]="!myForm.form.valid" (click)="submitAddress($event)">
+                <button id="rsvpSubmit" type="submit" class="btn btn-secondary float-right" >
                     
                     <span id="submitText">
                         <span class="en">Submit</span>

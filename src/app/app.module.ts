@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RsvpFormComponent } from './rsvp-form/rsvp-form.component';
 import { PhotoBannerComponent } from './photo-banner/photo-banner.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent }
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
     ),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
